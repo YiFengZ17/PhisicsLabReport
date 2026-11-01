@@ -1,0 +1,114 @@
+\section*{三、结果与分析}
+
+\subsection*{1. 数据处理与结果}
+
+\subsubsection*{1.1 平凸透镜曲率半径}
+
+按照教材式（5-2-8），取六组互不重复的暗环进行逐差计算，即
+$(17,11)$、$(16,10)$、$(15,9)$、$(14,8)$、$(13,7)$ 和 $(12,6)$。
+每组级次差均为 $m-n=6$，故
+\begin{equation}
+  R_i=\frac{d_m^2-d_n^2}{4(m-n)\lambda}.
+\end{equation}
+
+\begin{table}[H]
+  \centering
+  \caption{牛顿环逐差计算结果}
+  \label{tab:newton-result}
+  \begin{tabular}{cccc}
+    \toprule
+    $m$ & $n$ & $d_m^2-d_n^2$/mm$^2$ & $R_i$/m \\
+    \midrule
+    17 & 11 & 13.89200 & 0.982239 \\
+    16 & 10 & 13.99278 & 0.989364 \\
+    15 &  9 & 14.23900 & 1.006773 \\
+    14 &  8 & 14.37104 & 1.016109 \\
+    13 &  7 & 14.29063 & 1.010424 \\
+    12 &  6 & 14.33740 & 1.013731 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+曲率半径的平均值为
+\begin{equation}
+  \bar R=\frac{1}{6}\sum_{i=1}^{6}R_i=1.003107\,\mathrm{m}.
+\end{equation}
+六组结果的样本标准差为
+\begin{equation}
+  s_R=\sqrt{\frac{\sum_{i=1}^{6}(R_i-\bar R)^2}{6-1}}
+  =0.013952\,\mathrm{m}.
+\end{equation}
+按照教材中重复测量的 A 类标准不确定度公式，平均值的不确定度为
+\begin{equation}
+  u_A(\bar R)=\frac{s_R}{\sqrt 6}=0.005696\,\mathrm{m}.
+\end{equation}
+按有效数字规则，测量结果写为
+\begin{equation}
+  \ResultBox{R=(1.003\pm0.006)\,\mathrm{m}},
+\end{equation}
+相对标准不确定度约为 $0.57\%$。
+
+\subsubsection*{1.2 薄片厚度}
+
+薄片到劈尖接触线的距离为
+\begin{equation}
+  L=L_{\text{右}}-L_{\text{左}}=48.966-6.208=42.758\,\mathrm{mm}.
+\end{equation}
+
+按照教材式（5-2-9）和表 5-2-2，对每一组相隔十条的条纹分别计算薄片厚度：
+\begin{equation}
+  e_i=\frac{10L\lambda}{2(s_i-s_{i+10})}
+  =\frac{5L\lambda}{s_i-s_{i+10}}.
+\end{equation}
+
+\begin{table}[H]
+  \centering
+  \caption{劈尖薄片厚度逐差计算结果}
+  \label{tab:wedge-result}
+  \begin{tabular}{ccc}
+    \toprule
+    $i$ & $s_i-s_{i+10}$/mm & $e_i$/$\mu\mathrm{m}$ \\
+    \midrule
+     1 & 2.735 & 46.065 \\
+     2 & 2.725 & 46.234 \\
+     3 & 2.578 & 48.870 \\
+     4 & 2.726 & 46.217 \\
+     5 & 2.737 & 46.031 \\
+     6 & 2.733 & 46.098 \\
+     7 & 2.733 & 46.098 \\
+     8 & 2.726 & 46.217 \\
+     9 & 2.694 & 46.766 \\
+    10 & 2.722 & 46.285 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+十组厚度的平均值为
+\begin{equation}
+  \bar e=\frac{1}{10}\sum_{i=1}^{10}e_i=46.48785\,\mu\mathrm{m}.
+\end{equation}
+样本标准差为
+\begin{equation}
+  s_e=\sqrt{\frac{\sum_{i=1}^{10}(e_i-\bar e)^2}{10-1}}
+  =0.86254\,\mu\mathrm{m}.
+\end{equation}
+平均值的 A 类标准不确定度为
+\begin{equation}
+  u_A(\bar e)=\frac{s_e}{\sqrt{10}}=0.27276\,\mu\mathrm{m}.
+\end{equation}
+按有效数字规则，薄片厚度的测量结果为
+\begin{equation}
+  \ResultBox{e=(46.49\pm0.27)\,\mu\mathrm{m}},
+\end{equation}
+相对标准不确定度约为 $0.59\%$。
+
+\setstretch{1.24}
+\subsection*{2. 误差分析}
+
+\begin{enumerate}[itemsep=0.2em, topsep=0.3em]
+  \item 从六组 $R_i$ 的数值可以看出，测量结果存在一定波动。主要原因是暗环有一定宽度且边缘不够清晰，十字叉丝与暗环相切位置的判断会产生随机误差；光照和装置的轻微变化也会影响读数。
+  \item 若显微镜的移动方向没有准确通过牛顿环圆心，两侧位置之差得到的是弦长而不是真实直径，会使曲率半径产生系统偏差。
+  \item 劈尖条纹定位受条纹宽度、亮度和叉丝位置判断影响；若条纹没有与显微镜移动方向垂直，测得的条纹间距会偏大。
+  \item 读数时若改变鼓轮旋转方向，螺杆与螺母间隙会引起空程差。本实验始终沿同一方向逼近读数位置，以减小其影响。
+  \item 固定螺钉的松紧、镜片表面的灰尘及局部接触状态会改变空气膜形状，从而给牛顿环和劈尖测量带来系统误差。
+\end{enumerate}

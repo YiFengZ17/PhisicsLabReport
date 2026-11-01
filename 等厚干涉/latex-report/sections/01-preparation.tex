@@ -1,0 +1,46 @@
+\section*{一、预习报告}
+
+\subsection*{1. 实验综述}
+
+等厚干涉的关键原理是薄膜厚度决定两束反射光的光程差。在空气膜、近似垂直入射条件下，由于其中一束反射光发生半波损失，反射光的光程差为
+\begin{equation}
+  \delta=2e+\frac{\lambda}{2}.
+\end{equation}
+反射暗纹满足 $2e=k\lambda$。膜厚相同的位置具有相同的干涉级次，因此牛顿环呈同心圆，劈尖干涉条纹呈近似平行直线。
+
+对牛顿环，空气膜厚随圆环半径增大而增大。结合平凸透镜球面的几何关系与暗纹条件，有
+\begin{equation}
+  r_k^2=k\lambda R.
+\end{equation}
+其中 $R$ 为平凸透镜的曲率半径。实际接触点可能因灰尘或接触变形存在附加膜厚，直接使用单个圆环会带入固定偏差。因此测量第 $m$、$n$ 级暗环的直径并作平方差，以消去常量项：
+\begin{equation}
+  R=\frac{d_m^2-d_n^2}{4(m-n)\lambda}.
+\end{equation}
+
+对劈尖，膜厚沿长度方向近似线性增加，相邻同类条纹对应的膜厚差为 $\lambda/2$。设相邻条纹的平均间距为 $a$，薄片到劈尖接触线的距离为 $L$，则
+\begin{equation}
+  e=\frac{L\lambda}{2a}.
+\end{equation}
+实验中读取 20 条条纹的位置 $s_i$，采用逐差法计算
+\begin{equation}
+  \bar a=\frac{1}{100}\sum_{i=1}^{10}(s_i-s_{i+10}),\qquad
+  e=\frac{50L\lambda}{\sum_{i=1}^{10}(s_i-s_{i+10})}.
+\end{equation}
+
+读数显微镜的鼓轮应始终沿同一方向逼近测量位置；若越过目标，应退回若干圈后重新沿原方向逼近，以减小空程差。
+
+\subsection*{2. 实验重点}
+
+\begin{enumerate}
+  \item 理解牛顿环与劈尖干涉条纹的成因，掌握膜厚与干涉级次的对应关系。
+  \item 学习用等厚干涉法测量平凸透镜的曲率半径和薄片厚度。
+  \item 掌握读数显微镜的调节、对准和读数方法。
+\end{enumerate}
+
+\subsection*{3. 实验难点}
+
+\begin{enumerate}
+  \item 同时调清牛顿环中心、劈尖条纹和十字叉丝。
+  \item 准确判断圆环边缘与条纹中心，尽量减小随机误差。
+  \item 移动显微镜时始终沿同一方向逼近测量位置，避免空程差。
+\end{enumerate}

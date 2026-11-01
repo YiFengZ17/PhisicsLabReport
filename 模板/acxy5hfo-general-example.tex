@@ -1,0 +1,151 @@
+\documentclass[a4paper]{article}
+\usepackage[UTF8,fontset=none]{ctex}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{geometry}
+\usepackage{fontspec}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{ulem}
+\usepackage{gensymb}
+\usepackage{multirow}
+\IfFileExists{siunitx.sty}{\usepackage{siunitx}}{}
+\usepackage{etoolbox}
+
+% 本文件由 acxy5hfo.tex 派生，仅用于模板兼容性和一般排版测试。
+% 所有姓名、学号和实验数据均为醒目标注的虚构示例，不可作为实验记录提交。
+
+\makeatletter
+\setlength{\textfloatsep}{5pt plus 2pt minus 4pt}
+\setlength{\floatsep}{5pt plus 2pt minus 4pt}
+\setlength{\intextsep}{5pt plus 2pt minus 4pt}
+\makeatother
+
+\setlength{\parindent}{0pt}
+
+% 原模板硬编码 Windows 字体；本机测试副本改用已安装的中西文字体。
+\setmainfont{TeX Gyre Termes}
+\setsansfont{TeX Gyre Heros}
+\setCJKmainfont[AutoFakeBold=2]{AR PL SungtiL GB}
+\setCJKsansfont[AutoFakeBold=2]{Droid Sans Fallback}
+
+\geometry{left=2cm,right=2cm,top=2.5cm,bottom=2.5cm}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{浙江大学物理实验教学中心制 \quad 第 \thepage 页 / 共 \pageref{LastPage} 页}
+
+\begin{document}
+
+\linespread{1.5}
+\selectfont
+
+\begin{center}
+\vspace*{1em}
+\includegraphics[width=6.2cm]{assets/zju-name.jpg}\\
+\vspace{0.6cm}
+{\fontsize{50pt}{54pt}\selectfont \textbf{物理学实验I}}\\
+\vspace{2em}
+{\fontsize{50pt}{54pt}\selectfont \textbf{电子实验报告}}\\
+\vspace{10em}
+
+\Large \textbf{实验名称：\uline{\makebox[6.5cm][c]{单摆周期测量（排版示例）}}}\\
+\Large \textbf{实验桌号：\uline{\makebox[6.5cm][c]{A-00（示例）}}}\\
+\Large \textbf{指导教师：\uline{\makebox[6.5cm][c]{示例教师}}}\\
+\vspace{3em}
+\Large \textbf{班 \quad 级：\uline{\makebox[6cm][c]{示例班级}}}\\
+\Large \textbf{姓 \quad 名：\uline{\makebox[6cm][c]{示例学生}}}\\
+\Large \textbf{学 \quad 号：\uline{\makebox[6cm][c]{0000000000}}}\\
+\vspace{3em}
+\Large \textbf{实验日期：2026年9月21日~~星期一下午（示例）}\\
+\vspace{1em}
+\normalsize （本报告全部内容仅用于模板排版测试）
+\end{center}
+
+\newpage
+
+\section*{一、预习报告}
+
+\subsection*{1. 实验综述}
+本示例以小角度单摆为对象，使用秒表记录多次摆动的总时间，并由
+$T=t/N$ 得到单次周期。理想条件下，周期与摆长满足
+\begin{equation}
+  T=2\pi\sqrt{\frac{L}{g}}, \qquad
+  g=\frac{4\pi^2L}{T^2}.
+\end{equation}
+通过重复测量、求平均值和估计不确定度，可检验理论关系以及人工计时对结果的影响。
+
+\subsection*{2. 实验重点}
+规范读取摆长和累计计时数据，使用合适的有效数字表达平均值与不确定度，并保证表格、公式和单位清楚一致。
+
+\subsection*{3. 实验难点}
+减小释放角度与人为启停秒表造成的系统偏差，并区分随机不确定度和仪器分辨率带来的影响。
+
+\section*{二、原始数据}
+下框模拟插入“教师签名的原始记录照片”后所占的版面；真实报告中应替换为清晰、完整且未经裁掉签字信息的扫描图。
+
+\begin{figure}[htbp]
+  \centering
+  \fbox{\parbox[c][5.6cm][c]{0.88\textwidth}{\centering
+  原始数据记录照片占位区域\\[0.8em]
+  （排版示例：此处没有真实实验图片或教师签名）}}
+  \caption*{图像占位框仅用于检查宽度、分页和图文间距}
+\end{figure}
+
+% 避免下一节标题与其首个结果表跨页分离。
+\clearpage
+\section*{三、结果与分析}
+\subsection*{1. 数据处理与结果}
+表中数值为专门构造的排版示例，不代表任何一次实际实验。
+
+\begin{table}[htbp]
+  \centering
+  \caption{单摆周期测量的示例数据}
+  \begin{tabular}{|c|c|c|c|}
+    \hline
+    次数 & 摆动次数 $N$ & 总时间 $t$/s & 周期 $T$/s \\
+    \hline
+    1 & 20 & 40.12 & 2.006 \\
+    2 & 20 & 40.08 & 2.004 \\
+    3 & 20 & 40.16 & 2.008 \\
+    4 & 20 & 40.10 & 2.005 \\
+    5 & 20 & 40.14 & 2.007 \\
+    \hline
+    \multicolumn{3}{|c|}{平均值} & 2.006 \\
+    \hline
+  \end{tabular}
+\end{table}
+
+取示例摆长 $L=(0.9980\pm0.0005)\,\mathrm{m}$，平均周期
+$\overline{T}=2.006\,\mathrm{s}$，代入式（1）得到
+\[
+  g_{\mathrm{example}}=\frac{4\pi^2\times0.9980}{(2.006)^2}
+  =9.79\,\mathrm{m\,s^{-2}}.
+\]
+若周期和摆长相互独立，相对合成不确定度可写为
+\[
+  \frac{u(g)}{g}=\sqrt{\left(\frac{u(L)}{L}\right)^2+
+  \left(2\frac{u(T)}{T}\right)^2}.
+\]
+
+\subsection*{2. 误差分析}
+示例数据的离散程度较小，但人工计时的反应延迟可能在每次启停时引入偏差。累计测量多个周期能够降低单次反应时间在总时间中的相对占比。若摆角不够小、摆长测量未取到摆球质心，或支点存在摩擦，结果还会产生系统偏差。
+
+\subsection*{3. 实验探讨}
+一般报告应同时给出原始量、处理方法、最终结果与不确定度，避免只列计算结果。表格标题、变量符号和单位应能让读者脱离正文仍理解各列含义。
+
+\section*{四、思考题}
+\textbf{题目：为什么测量多个完整周期，而不直接测量一个周期？}
+
+\textbf{答：}在反应时间近似不变的情况下，累计时间随周期数增加，而启停误差不会同比例增加，因此换算到单个周期后的相对误差通常更小。周期数也不宜无限增加，否则阻尼、振幅变化和计数失误可能变得明显。
+
+\vfill
+\begin{center}
+  \small —— 一般用例结束；所有字段与数据均为虚构示例 ——
+\end{center}
+
+\end{document}

@@ -1,0 +1,50 @@
+\section*{一、预习报告}
+
+\subsection*{1. 实验综述}
+
+直流电桥将待测电阻与标准电阻组成四臂网络。本实验包括自组惠斯登电桥测量未知电阻，以及用非平衡直流电桥测量 Cu50 铜电阻温度系数两部分。
+
+惠斯登电桥平衡时检流计中无电流，桥路两中点等电位，满足
+\begin{equation}
+  \frac{R_1}{R_2}=\frac{R_x}{R_s},
+  \qquad R_x=\frac{R_1}{R_2}R_s=kR_s.
+\end{equation}
+交换待测电阻 $R_x$ 与标准电阻 $R_s$ 后再次调平，有 $R_x=R_s'/k$。两式相乘得到
+\begin{equation}
+  R_x=\sqrt{R_sR_s'},
+\end{equation}
+可消除比率臂 $R_1$、$R_2$ 自身误差对测量结果的影响。
+
+电桥灵敏度定义为
+\begin{equation}
+  S=\frac{\Delta d}{\Delta R_s/R_s},
+\end{equation}
+其中 $\Delta d$ 为检流计偏转格数，$\Delta R_s$ 为使电桥偏离平衡时标准电阻的改变量。灵敏度越高，电桥对微小电阻变化越敏感。
+
+在非平衡直流电桥中，Cu50 电阻满足近似关系
+\begin{equation}
+  R_t=R_0(1+\alpha t).
+\end{equation}
+在教材的理想模型中，$0\,{}^\circ\mathrm C$ 时有 $R_t=R_0$，且取 $R_1=R_2=R_3=R_0$，因而电桥平衡、$U=0$；如果实验条件允许，可在冰水混合物中进行实际预调平衡。温度升至 $t$ 时，教材给出
+\begin{equation}
+  U=\frac{\alpha t}{4+2\alpha t}\mathcal E,
+  \qquad \alpha=\frac{4U}{t(\mathcal E-2U)},
+\end{equation}
+本实验装置的工作电源取 $\mathcal E=1.3\ \mathrm V$。
+
+\subsection*{2. 实验目的}
+
+\begin{enumerate}
+  \item 掌握自组惠斯登电桥的接线、调平和交换测量方法。
+  \item 研究比率臂绝对值及桥臂比率对电桥灵敏度和测量结果的影响。
+  \item 掌握非平衡电桥把电阻变化转换为输出电压的方法。
+  \item 测量 Cu50 铜电阻的温度系数，并与教材理论值比较。
+\end{enumerate}
+
+\subsection*{3. 实验重点与难点}
+
+\begin{enumerate}
+  \item 接通电桥时先接电源，再瞬时接通检流计，避免指针冲出量程。
+  \item 测灵敏度时只微调标准电阻，准确记录电阻改变量和检流计偏转格数。
+  \item 测量 Cu50 时控制升温速度，待温度及电压稳定后同步读数，减小热滞后和初始零点偏移。
+\end{enumerate}

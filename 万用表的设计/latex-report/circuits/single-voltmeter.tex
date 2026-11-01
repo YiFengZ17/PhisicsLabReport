@@ -1,0 +1,20 @@
+\documentclass[tikz,border=5pt]{standalone}
+\usepackage[europeanresistors]{circuitikz}
+\usepackage{mathptmx}
+\standaloneenv{circuitikz}
+\begin{document}
+\begin{circuitikz}[font=\small,line width=.65pt]
+\ctikzset{bipoles/length=1cm}
+
+\draw (0,0) to[R,l={$R_1$}] (3,0) to[R,l={$R_3$}] (5,0);
+\draw (0,0) -- (0,1.4) to[rmeter,t=$G$] (3,1.4) to[short,-*] (3,0);
+\draw (0,0) to[short,*-o] (0,-.6);\draw (5,0) to[short,-o] (5,-.6);
+\node at (2.5,-.85) {$U_m=5\,\mathrm V$};
+\draw[dashed,gray] (-.3,-.3) rectangle (3.3,1.8);
+\node at (1.5,2.05) {$I'_g=5\,\mathrm{mA},R'_g$};
+\begin{scope}[xshift=7cm]
+\draw (0,1.8) to[rmeter,t=$V$,l={$V_{\rm mod}$}] (4,1.8) -- (4,-1.5) to[nos,l={$K$}] (2.7,-1.5) to[battery1,l={$E$}] (1.3,-1.5) to[R,l={$R'$}] (0,-1.5) -- (0,1.8);
+\draw (0,.7) to[rmeter,t=$V$,l={$V_{\rm ref}$},*-*] (4,.7);
+\draw (0,-.4) to[vR,l={$R$},*-*] (4,-.4);
+\end{scope}
+\end{circuitikz}\end{document}

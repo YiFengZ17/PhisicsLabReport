@@ -1,0 +1,78 @@
+\documentclass[a4paper,10pt,UTF8,fontset=none]{ctexart}
+\usepackage[left=12mm,right=12mm,top=10mm,bottom=10mm]{geometry}
+\usepackage{fontspec,array,tabularx,amsmath}
+\setCJKmainfont[Path=/mnt/c/Windows/Fonts/,BoldFont=simhei.ttf]{simsun.ttc}
+\setmainfont{TeX Gyre Termes}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{2mm}
+\setlength{\tabcolsep}{3pt}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+\newcommand{\blank}{\underline{\hspace{13mm}}}
+\newcommand{\rh}{\rule[-2mm]{0pt}{6.5mm}}
+\begin{document}
+表1 截止电压\quad 光阑孔径：\blank mm\quad 光源距离：\blank cm
+
+\begin{tabularx}{\linewidth}{|>{\raggedright\arraybackslash}p{29mm}|Y|Y|Y|Y|Y|}\hline
+\rh 波长 $\lambda$/nm &  &  &  &  &  \\ \hline
+\rh $U_{AK,1}$/V &  &  &  &  &  \\ \hline
+\rh $U_{AK,2}$/V &  &  &  &  &  \\ \hline
+\rh $U_{AK,3}$/V &  &  &  &  &  \\ \hline
+\rh $U_{AK,4}$/V &  &  &  &  &  \\ \hline
+\rh $U_{AK,5}$/V &  &  &  &  &  \\ \hline
+\end{tabularx}
+表2 伏安特性\quad 光阑孔径：\blank mm\quad 光源距离：\blank cm
+
+表2-1 滤光片 1\quad 波长 $\lambda$：\blank nm\quad 电流单位：$10^{\underline{\phantom{-10}}}\,\mathrm{A}$
+
+\begin{tabularx}{\linewidth}{|>{\raggedright\arraybackslash}p{29mm}|Y|Y|Y|Y|Y|Y|Y|Y|Y|Y|}\hline
+\rh $U_{AK}$/V &  &  &  &  &  &  &  &  &  &  \\ \hline
+\rh 电流 $i$ &  &  &  &  &  &  &  &  &  &  \\ \hline
+\rh $U_{AK}$/V &  &  &  &  &  &  &  &  &  &  \\ \hline
+\rh 电流 $i$ &  &  &  &  &  &  &  &  &  &  \\ \hline
+\end{tabularx}
+表2-2 滤光片 2\quad 波长 $\lambda$：\blank nm\quad 电流单位：$10^{\underline{\phantom{-10}}}\,\mathrm{A}$
+
+\begin{tabularx}{\linewidth}{|>{\raggedright\arraybackslash}p{29mm}|Y|Y|Y|Y|Y|Y|Y|Y|Y|Y|}\hline
+\rh $U_{AK}$/V &  &  &  &  &  &  &  &  &  &  \\ \hline
+\rh 电流 $i$ &  &  &  &  &  &  &  &  &  &  \\ \hline
+\rh $U_{AK}$/V &  &  &  &  &  &  &  &  &  &  \\ \hline
+\rh 电流 $i$ &  &  &  &  &  &  &  &  &  &  \\ \hline
+\end{tabularx}
+表2-3 滤光片 3\quad 波长 $\lambda$：\blank nm\quad 电流单位：$10^{\underline{\phantom{-10}}}\,\mathrm{A}$
+
+\begin{tabularx}{\linewidth}{|>{\raggedright\arraybackslash}p{29mm}|Y|Y|Y|Y|Y|Y|Y|Y|Y|Y|}\hline
+\rh $U_{AK}$/V &  &  &  &  &  &  &  &  &  &  \\ \hline
+\rh 电流 $i$ &  &  &  &  &  &  &  &  &  &  \\ \hline
+\rh $U_{AK}$/V &  &  &  &  &  &  &  &  &  &  \\ \hline
+\rh 电流 $i$ &  &  &  &  &  &  &  &  &  &  \\ \hline
+\end{tabularx}
+表2-4 滤光片 4\quad 波长 $\lambda$：\blank nm\quad 电流单位：$10^{\underline{\phantom{-10}}}\,\mathrm{A}$
+
+\begin{tabularx}{\linewidth}{|>{\raggedright\arraybackslash}p{29mm}|Y|Y|Y|Y|Y|Y|Y|Y|Y|Y|}\hline
+\rh $U_{AK}$/V &  &  &  &  &  &  &  &  &  &  \\ \hline
+\rh 电流 $i$ &  &  &  &  &  &  &  &  &  &  \\ \hline
+\rh $U_{AK}$/V &  &  &  &  &  &  &  &  &  &  \\ \hline
+\rh 电流 $i$ &  &  &  &  &  &  &  &  &  &  \\ \hline
+\end{tabularx}
+表2-5 滤光片 5\quad 波长 $\lambda$：\blank nm\quad 电流单位：$10^{\underline{\phantom{-10}}}\,\mathrm{A}$
+
+\begin{tabularx}{\linewidth}{|>{\raggedright\arraybackslash}p{29mm}|Y|Y|Y|Y|Y|Y|Y|Y|Y|Y|}\hline
+\rh $U_{AK}$/V &  &  &  &  &  &  &  &  &  &  \\ \hline
+\rh 电流 $i$ &  &  &  &  &  &  &  &  &  &  \\ \hline
+\rh $U_{AK}$/V &  &  &  &  &  &  &  &  &  &  \\ \hline
+\rh 电流 $i$ &  &  &  &  &  &  &  &  &  &  \\ \hline
+\end{tabularx}
+表3 饱和电流与距离\quad 波长：\blank nm\quad 孔径：\blank mm\quad $U_{AK}$：\blank V
+
+\begin{tabularx}{\linewidth}{|>{\raggedright\arraybackslash}p{29mm}|Y|Y|Y|Y|Y|Y|}\hline
+\rh 距离 $L$/cm &  &  &  &  &  &  \\ \hline
+\rh $i_s$/$10^{-10}\,\mathrm{A}$ &  &  &  &  &  &  \\ \hline
+\end{tabularx}
+表4 饱和电流与孔径\quad 波长：\blank nm\quad 距离：\blank cm\quad $U_{AK}$：\blank V
+
+\begin{tabularx}{\linewidth}{|>{\raggedright\arraybackslash}p{29mm}|Y|Y|Y|}\hline
+\rh 孔径 $\Phi$/mm & 4 & 8 & 16 \\ \hline
+\rh $i_s$/$10^{-10}\,\mathrm{A}$ &  &  &  \\ \hline
+\end{tabularx}
+\end{document}
