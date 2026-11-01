@@ -67,7 +67,8 @@ with (BASE/'手动测量数据.csv').open('w') as f:
  w=csv.writer(f);w.writerow(['U_G2K_V','I_A_nA']);w.writerows(zip(x,y))
 with (BASE/'自动峰值数据.csv').open('w') as f:
  w=csv.writer(f);w.writerow(['n','before_U_V','before_I_nA','after_U_V','after_I_nA']);w.writerows(zip(n.astype(int),before,ib,after,ia))
-font=FontProperties(fname='/mnt/c/Windows/Fonts/simsun.ttc')
+# 宋体：优先 Windows SimSun，云端 Linux 回退到 TeX Live 自带的 FandolSong
+font=FontProperties(fname=next(p for p in ['/mnt/c/Windows/Fonts/simsun.ttc','/usr/share/texlive/texmf-dist/fonts/opentype/public/fandol/FandolSong-Regular.otf','/usr/local/texlive/texmf-dist/fonts/opentype/public/fandol/FandolSong-Regular.otf'] if Path(p).exists()))
 plt.rcParams.update({'font.family':font.get_name(),'axes.unicode_minus':False,'font.size':11,'figure.dpi':150})
 # Explicit font application avoids font-cache dependence.
 def cn(ax):

@@ -1,7 +1,13 @@
 \documentclass[a4paper,10pt,UTF8,fontset=none]{ctexart}
 \usepackage[left=12mm,right=12mm,top=10mm,bottom=10mm]{geometry}
 \usepackage{fontspec,array,tabularx,amsmath}
-\setCJKmainfont[Path=/mnt/c/Windows/Fonts/,BoldFont=simhei.ttf]{simsun.ttc}
+\IfFileExists{/mnt/c/Windows/Fonts/simsun.ttc}
+  {\setCJKmainfont[Path=/mnt/c/Windows/Fonts/,BoldFont=simhei.ttf]{simsun.ttc}}
+  {\IfFontExistsTF{SimSun}{\setCJKmainfont[BoldFont=SimHei]{SimSun}}
+    {\IfFileExists{/usr/share/fonts/opentype/noto/NotoSerifCJK-Regular.ttc}
+      {\setCJKmainfont[Path=/usr/share/fonts/opentype/noto/,Extension=.ttc,FontIndex=2,
+        BoldFont=NotoSansCJK-Bold,BoldFeatures={FontIndex=2}]{NotoSerifCJK-Regular}}
+      {\setCJKmainfont{FandolSong-Regular}}}}
 \setmainfont{TeX Gyre Termes}
 \pagestyle{empty}
 \setlength{\parindent}{0pt}

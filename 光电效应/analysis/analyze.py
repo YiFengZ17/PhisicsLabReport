@@ -6,8 +6,10 @@ import matplotlib.pyplot as plt
 from matplotlib import font_manager
 ROOT=Path(__file__).resolve().parents[1]
 d=json.loads((ROOT/'analysis/verified-data.json').read_text())
-font_manager.fontManager.addfont('/mnt/c/Windows/Fonts/simsun.ttc')
-plt.rcParams.update({'font.family':'SimSun','axes.unicode_minus':False,'font.size':11,'axes.spines.top':False,'axes.spines.right':False,'figure.facecolor':'white'})
+# 宋体：优先 Windows SimSun，云端 Linux 回退到 TeX Live 自带的 FandolSong
+CJK_FONT=next(p for p in ['/mnt/c/Windows/Fonts/simsun.ttc','/usr/share/texlive/texmf-dist/fonts/opentype/public/fandol/FandolSong-Regular.otf','/usr/local/texlive/texmf-dist/fonts/opentype/public/fandol/FandolSong-Regular.otf'] if Path(p).exists())
+font_manager.fontManager.addfont(CJK_FONT)
+plt.rcParams.update({'font.family':font_manager.FontProperties(fname=CJK_FONT).get_name(),'axes.unicode_minus':False,'font.size':11,'axes.spines.top':False,'axes.spines.right':False,'figure.facecolor':'white'})
 c=299792458.; e=1.602176634e-19; h0=6.62607015e-34
 w=np.array(d['wavelength_nm']); U=-np.array(d['cutoff_signed_V']); mean=U.mean(0); ua=U.std(0,ddof=1)/np.sqrt(3); x=c/(w*1e-9)/1e14
 

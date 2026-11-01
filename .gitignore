@@ -1,0 +1,28 @@
+# LaTeX 编译中间文件
+*.aux
+*.log
+*.out
+*.xdv
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.toc
+*.bbl
+*.blg
+*.nav
+*.snm
+missfont.log
+
+# latexmk 直接输出的 main.pdf；交付版另存为“郑逸枫-…pdf”
+**/latex-report/main.pdf
+**/prelab-latex/main.pdf
+**/record-sheet/main.pdf
+
+# Python
+__pycache__/
+*.pyc
+
+# 系统杂项
+*:Zone.Identifier
+.DS_Store
+Thumbs.db

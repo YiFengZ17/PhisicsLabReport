@@ -7,7 +7,8 @@ import matplotlib.pyplot as plt
 from matplotlib.font_manager import FontProperties
 ROOT=Path(__file__).resolve().parent
 A=ROOT/'assets'
-font='/mnt/c/Windows/Fonts/simsun.ttc'
+# 宋体：优先 Windows SimSun，云端 Linux 回退到 TeX Live 自带的 FandolSong
+font=next(p for p in ['/mnt/c/Windows/Fonts/simsun.ttc','/usr/share/texlive/texmf-dist/fonts/opentype/public/fandol/FandolSong-Regular.otf','/usr/local/texlive/texmf-dist/fonts/opentype/public/fandol/FandolSong-Regular.otf'] if Path(p).exists())
 plt.rcParams['font.family']=FontProperties(fname=font).get_name()
 from matplotlib import font_manager
 font_manager.fontManager.addfont(font)

@@ -22,6 +22,11 @@
 \usepackage{float}
 \usepackage[hidelinks]{hyperref}
 
+% 中文字体回退链：
+%   1. WSL 下的 Windows 宋体/黑体（与已提交 PDF 一致）
+%   2. 系统已安装的 SimSun/SimHei（原生 Windows/macOS）
+%   3. 思源宋体/黑体 Noto Serif/Sans CJK SC（云端 Ubuntu，apt 包 fonts-noto-cjk）
+%   4. TeX Live 自带的 Fandol
 \IfFileExists{/mnt/c/Windows/Fonts/simsun.ttc}{%
   \setCJKmainfont[
     Path=/mnt/c/Windows/Fonts/,
@@ -35,11 +40,22 @@
     Path=/mnt/c/Windows/Fonts/,
     AutoFakeBold=2
   ]{simhei.ttf}
+}{\IfFontExistsTF{SimSun}{%
+  \setCJKmainfont[BoldFont=SimHei]{SimSun}
+  \setCJKsansfont[AutoFakeBold=2]{SimHei}
+  \setCJKfamilyfont{zhhei}[AutoFakeBold=2]{SimHei}
+}{\IfFileExists{/usr/share/fonts/opentype/noto/NotoSerifCJK-Regular.ttc}{%
+  % FontIndex=2 为 ttc 中的简体中文（SC）字面，避免误用日文字形
+  \defaultCJKfontfeatures{Path=/usr/share/fonts/opentype/noto/,Extension=.ttc,FontIndex=2}
+  \setCJKmainfont[BoldFont=NotoSansCJK-Bold,BoldFeatures={FontIndex=2}]{NotoSerifCJK-Regular}
+  \setCJKsansfont[BoldFont=NotoSansCJK-Bold,BoldFeatures={FontIndex=2}]{NotoSansCJK-Regular}
+  \setCJKfamilyfont{zhhei}[BoldFont=NotoSansCJK-Bold,BoldFeatures={FontIndex=2}]{NotoSansCJK-Regular}
+  \defaultCJKfontfeatures{}
 }{%
   \setCJKmainfont{FandolSong-Regular}
   \setCJKsansfont{FandolHei-Regular}
   \setCJKfamilyfont{zhhei}{FandolHei-Regular}
-}
+}}}
 \providecommand{\heiti}{\CJKfamily{zhhei}}
 \setmainfont{TeX Gyre Termes}
 \setsansfont{TeX Gyre Heros}
