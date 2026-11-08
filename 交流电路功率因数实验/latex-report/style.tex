@@ -1,0 +1,92 @@
+\usepackage[
+  left=2cm,
+  right=2cm,
+  top=2.5cm,
+  bottom=2.5cm,
+  headheight=15pt,
+  footskip=1.2cm
+]{geometry}
+\usepackage{fontspec}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage[hidelinks]{hyperref}
+
+\IfFileExists{/mnt/c/Windows/Fonts/simsun.ttc}{%
+  \setCJKmainfont[
+    Path=/mnt/c/Windows/Fonts/,
+    BoldFont=simhei.ttf
+  ]{simsun.ttc}
+  \setCJKsansfont[
+    Path=/mnt/c/Windows/Fonts/,
+    AutoFakeBold=2
+  ]{simhei.ttf}
+  \setCJKfamilyfont{zhhei}[
+    Path=/mnt/c/Windows/Fonts/,
+    AutoFakeBold=2
+  ]{simhei.ttf}
+}{%
+  \setCJKmainfont{FandolSong-Regular}
+  \setCJKsansfont{FandolHei-Regular}
+  \setCJKfamilyfont{zhhei}{FandolHei-Regular}
+}
+\providecommand{\heiti}{\CJKfamily{zhhei}}
+\setmainfont{TeX Gyre Termes}
+\setsansfont{TeX Gyre Heros}
+
+\setstretch{1.2}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0pt}
+\setlength{\textfloatsep}{8pt plus 2pt minus 3pt}
+\setlength{\floatsep}{8pt plus 2pt minus 3pt}
+\setlength{\intextsep}{8pt plus 2pt minus 3pt}
+
+\ctexset{
+  section = {
+    format = \zihao{3}\heiti,
+    indent = 0pt,
+    beforeskip = 1.0\baselineskip,
+    afterskip = 0.5\baselineskip
+  },
+  subsection = {
+    format = \zihao{4}\heiti,
+    indent = 0pt,
+    beforeskip = 0.8\baselineskip,
+    afterskip = 0.35\baselineskip
+  },
+  subsubsection = {
+    format = \zihao{-4}\heiti,
+    indent = 0pt,
+    beforeskip = 0.6\baselineskip,
+    afterskip = 0.25\baselineskip
+  }
+}
+
+\setlist[enumerate]{leftmargin=2.8em,itemsep=0.25em,topsep=0.25em}
+\setlist[itemize]{leftmargin=2.5em,itemsep=0.25em,topsep=0.25em}
+\captionsetup{font=small,labelsep=quad}
+\renewcommand{\arraystretch}{1.25}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+
+\fancypagestyle{report}{%
+  \fancyhf{}
+  \renewcommand{\headrulewidth}{0pt}
+  \fancyfoot[C]{\zihao{-5}浙江大学物理实验教学中心制\quad 第~\thepage~页~/~共~\pageref{LastPage}~页}
+}
+\fancypagestyle{plain}{%
+  \fancyhf{}
+  \renewcommand{\headrulewidth}{0pt}
+  \fancyfoot[C]{\zihao{-5}浙江大学物理实验教学中心制\quad 第~\thepage~页~/~共~\pageref{LastPage}~页}
+}
+
+\newcommand{\InfoField}[2][7cm]{\underline{\makebox[#1][c]{#2}}}
