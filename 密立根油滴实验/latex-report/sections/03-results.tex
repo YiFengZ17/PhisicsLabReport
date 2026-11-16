@@ -3,7 +3,7 @@
 
 \subsection*{1. 油滴电荷量}
 
-我按教材式（4-10-7）重新计算各次测量的电荷量，常量取软件参数。以第 1 次测量为例，$v=l/t=1.5\times10^{-3}/9.99\,\mathrm{m/s}=1.502\times10^{-4}\,\mathrm{m/s}$，未修正半径
+重新计算各次测量的电荷量，常量取软件参数。以第 1 次测量为例，$v=l/t=1.5\times10^{-3}/9.99\,\mathrm{m/s}=1.502\times10^{-4}\,\mathrm{m/s}$，未修正半径
 
 \[
 r=\sqrt{\frac{9\eta v}{2\rho g}}=\sqrt{\frac{9\times1.83\times10^{-5}\times1.502\times10^{-4}}{2\times981\times9.79}}\ \mathrm{m}=1.135\ \mu\mathrm{m},
@@ -28,7 +28,7 @@ r=\sqrt{\frac{9\eta v}{2\rho g}}=\sqrt{\frac{9\times1.83\times10^{-5}\times1.502
 10 & 5 & 0.5396 & 2.151 & 151.48 \\
 \bottomrule\end{tabular}\end{center}
 
-本次油滴所带电子数为 26～140 个，相邻电荷量之差不再接近 $e$，因此三种方法都与软件一致，取 $e_0=1.602\times10^{-19}\,\mathrm{C}$ 作为参考值，由 $q/e_0$ 取整确定 $n$。
+本次油滴所带电子数为 26～140 个，相邻电荷量之差不再接近 $e$，因此三种方法都取 $e_0=1.602\times10^{-19}\,\mathrm{C}$ 作为参考值，由 $q/e_0$ 取整确定 $n$。
 
 \subsection*{2. 方法一：平均值法}
 
@@ -46,11 +46,11 @@ r=\sqrt{\frac{9\eta v}{2\rho g}}=\sqrt{\frac{9\times1.83\times10^{-5}\times1.502
 4 & 223.09 & 139.26 & 139 & 1.6050 \\
 \bottomrule\end{tabular}\end{center}
 
-五个 $e_n$ 的平均值 $\bar e=1.6051\times10^{-19}\,\mathrm{C}$，样本标准差 $s=0.0061\times10^{-19}\,\mathrm{C}$。软件总览中第 2 粒油滴显示 $n=60$，是两次 $n$（61、60）平均后取整的结果；按平均值法由 $\bar q/e_0=60.85$ 应取 61。
+五个 $e_n$ 的平均值 $\bar e=1.6051\times10^{-19}\,\mathrm{C}$，样本标准差 $s=0.0061\times10^{-19}\,\mathrm{C}$。
 
 \subsection*{3. 方法二：公约数法}
 
-按教材表 4-10-3 的逐次相减法，把 10 个电荷量排序，求相邻差值，再由 $q_i/e_0$ 取整得到 $n_i$，计算 $e_i=q_i/n_i$。这也是软件采用的方法。
+使用逐次相减法，把 10 个电荷量排序，求相邻差值，再由 $q_i/e_0$ 取整得到 $n_i$，计算 $e_i=q_i/n_i$。
 
 \begin{center}\small\setlength{\tabcolsep}{4pt}
 \begin{tabular}{ccccccc}
@@ -73,7 +73,7 @@ r=\sqrt{\frac{9\eta v}{2\rho g}}=\sqrt{\frac{9\times1.83\times10^{-5}\times1.502
 
 \subsection*{4. 方法三：多重差值法}
 
-先对排序后的电荷量求一阶差值 $\Delta q_1$，再对 $\Delta q_1$ 求二阶差值 $\Delta q_2=|\Delta q_{1,j+1}-\Delta q_{1,j}|$。课件示例中油滴带电少，差值本身就接近 $e$；本次差值较大，因此每个差值按 $k=\Delta q/e_0$ 取整后计算 $e=\Delta q/k$。
+先对排序后的电荷量求一阶差值 $\Delta q_1$，再对 $\Delta q_1$ 求二阶差值 $\Delta q_2=|\Delta q_{1,j+1}-\Delta q_{1,j}|$。
 
 \begin{center}\small\setlength{\tabcolsep}{4pt}
 \begin{tabular}{cccccccccc}
@@ -99,7 +99,7 @@ $e$/(10$^{-19}$ C) & 1.482 & 1.727 & 1.628 & 1.575 & 1.618 & 1.585 & 1.587 & 1.6
 
 \subsection*{5. 结果与不确定度}
 
-按教材绪论，对多次得到的 $e$ 取平均，A 类标准不确定度为 $u_A=s/\sqrt N$。电压和计时均由仪器数字显示，现场没有给出它们的允许误差限，因此不评定 B 类分量。
+对多次得到的 $e$ 取平均，A 类标准不确定度为 $u_A=s/\sqrt N$。电压和计时均由仪器数字显示，现场没有给出它们的允许误差限，因此不评定 B 类分量。
 
 \begin{center}\small\setlength{\tabcolsep}{4pt}
 \begin{tabular}{ccccccc}
@@ -131,9 +131,8 @@ e_3=(1.59\pm0.03)\times10^{-19}\ \mathrm{C}.
 
 \begin{enumerate}
 \item \textbf{油滴带电量较多。} 本次 $n=26\sim140$，相邻电荷量的差值较大，需借助 $e_0$ 确定 $n$；同时小差值与测量误差同一量级，使多重差值法的结果较为分散。
-\item \textbf{计时误差。} 由 $q\propto t^{-3/2}$，下落时间的相对误差会放大 1.5 倍传到 $q$。第 4 粒油滴下落时间只有约 1.6 s，按键计时的反应误差影响最大。
-\item \textbf{平衡电压判断。} 平衡电压以整数伏读取，油滴是否完全静止靠肉眼判断，而 $q\propto1/U$。同一油滴两次测量的 $U$ 和 $t$ 都有差别，使两次 $q$ 相差 1.5～3.4（单位 10$^{-19}$ C），约为 1～2 个电子电荷。
-\item \textbf{常量取值。} 软件黏滞系数取 $1.83\times10^{-5}$，教材为 $1.82\times10^{-5}$，由 $q\propto\eta^{3/2}$，两者使 $q$ 相差约 0.84\%；大气压强固定为 76.0 cmHg，也未按当天实际气温和气压修正。
-\item \textbf{布朗运动与油滴变化。} 本次油滴半径约 1.1～2.8 $\mu$m，较小的油滴受空气分子碰撞会上下抖动，影响平衡判断和计时；测量过程中油滴也可能少量挥发。
+\item \textbf{计时误差。} 由 $q\propto t^{-3/2}$，下落时间的相对误差会放大 1.5 倍传到 $q$。第 4 粒油滴下落时间只有约 1.6 s，按键计时的反应误差影响较大。
+\item \textbf{平衡电压判断。} 平衡电压以整数伏读取，油滴是否完全静止靠肉眼判断，因为布朗运动，油滴难免小范围晃动，难以完美达到静止平衡。
+\item \textbf{油滴变化。} 本次油滴半径约 1.1～2.8 $\mu$m，较小的油滴受空气分子碰撞会上下抖动，测量过程中油滴可能少量挥发。
 
 \end{enumerate}
